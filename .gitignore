@@ -1,0 +1,39 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.so
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# VSCode or other IDE settings (if applicable)
+.vscode/
+.idea/
+
+# Anaconda project files (unless needed)
+anaconda_projects/
+
+# Jupyter autosave / hidden files
+*.autosave
+*.swp
+*.swo
+*.bak
+
+# OS or system files
+.DS_Store
+Thumbs.db
+
+# Dot folders that are virtual/project specific
+.virtual_documents/
+
+# Environment files
+.env
+.env.*
+
+# Log files
+*.log
