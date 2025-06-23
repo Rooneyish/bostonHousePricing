@@ -4,8 +4,8 @@
   "channel": "https://repo.anaconda.com/pkgs/main/win-64",
   "constrains": [],
   "depends": [
-    "vc 14.*",
-    "pip"
+    "pip",
+    "vc 14.*"
   ],
   "extracted_package_dir": "C:\\Users\\ronneyish\\anaconda3\\pkgs\\python-3.7.0-hea74fb7_0",
   "files": [
