@@ -1,3 +1,149 @@
-<h1>
-    Hello World
-</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Boston Housing Price Predictor</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f2f5;
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    form {
+      background: #fff;
+      padding: 24px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .form-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .form-group {
+      flex: 1 1 45%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin-bottom: 6px;
+      font-weight: bold;
+    }
+
+    input[type="number"] {
+      padding: 8px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      background-color: #4CAF50;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    @media (max-width: 600px) {
+      .form-group {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Boston Housing Price Prediction</h2>
+  <form action="{{ url_for('predict')}}" method="post">
+    <div class="form-container">
+      
+      <div class="form-group">
+        <label for="CRIM">CRIM (Crime Rate)</label>
+        <input type="number" step="any" name="CRIM" required>
+      </div>
+
+      <div class="form-group">
+        <label for="ZN">ZN (Residential Land %)</label>
+        <input type="number" step="any" name="ZN" required>
+      </div>
+
+      <div class="form-group">
+        <label for="INDUS">INDUS (Business %)</label>
+        <input type="number" step="any" name="INDUS" required>
+      </div>
+
+      <div class="form-group">
+        <label for="CHAS">CHAS (Near River, 0 or 1)</label>
+        <input type="number" step="1" min="0" max="1" name="CHAS" required>
+      </div>
+
+      <div class="form-group">
+        <label for="NOX">NOX (Nitric Oxide)</label>
+        <input type="number" step="any" name="NOX" required>
+      </div>
+
+      <div class="form-group">
+        <label for="RM">RM (Avg Rooms)</label>
+        <input type="number" step="any" name="RM" required>
+      </div>
+
+      <div class="form-group">
+        <label for="AGE">AGE (% Built Before 1940)</label>
+        <input type="number" step="any" name="AGE" required>
+      </div>
+
+      <div class="form-group">
+        <label for="DIS">DIS (Distance to Jobs)</label>
+        <input type="number" step="any" name="DIS" required>
+      </div>
+
+      <div class="form-group">
+        <label for="RAD">RAD (Highway Access)</label>
+        <input type="number" step="1" name="RAD" required>
+      </div>
+
+      <div class="form-group">
+        <label for="TAX">TAX (Property Tax Rate)</label>
+        <input type="number" step="any" name="TAX" required>
+      </div>
+
+      <div class="form-group">
+        <label for="PTRATIO">PTRATIO (Pupil-Teacher Ratio)</label>
+        <input type="number" step="any" name="PTRATIO" required>
+      </div>
+
+      <div class="form-group">
+        <label for="B">B (Black Index)</label>
+        <input type="number" step="any" name="B" required>
+      </div>
+
+      <div class="form-group">
+        <label for="LSTAT">LSTAT (% Lower Status)</label>
+        <input type="number" step="any" name="LSTAT" required>
+      </div>
+    </div>
+
+    <button type="submit">Predict Price</button>
+  </form>
+  {{prediction_text}}
+</body>
+</html>
